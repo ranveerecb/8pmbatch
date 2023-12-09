@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/styles/clinicstyles.css' %}">
+    <script src="{% static '/scripts/clinicscripts.js' %}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body onload="testFun()">
+    <h1>Welcome to Practo App</h1>
+    <p align="center">
+        <a href="#">home</a> |
+        <a href="{% url 'doctorl'%}">Doctor</a> |
+        <a href="{% url 'patientl'%}">Patient</a>
+    </p>
+    <img src="{% static '/images/xyz.jpg' %}" alt="XYZ" height="200px" width="200px" >
+    <img src="{% static '/images/14.jpg' %}" alt="XYZq" height="200px" width="200px" >
+</body>
+</html>

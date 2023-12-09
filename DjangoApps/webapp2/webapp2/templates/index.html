@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="yellow" text="red">
+    <header>
+        <p align="center">
+            <a href="#">home</a>
+            <a href="{% url 'aboutl'%}">about</a>
+            <a href="{% url 'contactl'%}">contact</a>
+        </p>
+    </header>
+    <hr>
+    <h1>
+        Welcome to Ranveer School
+    </h1>
+    <h2>
+        Owner Name is:{{name}}
+    </h2>
+    <h3>
+        {{name}} Teacher following all subjects <br>
+        {{subjects}} <br>
+        <ul>
+            {%for subject in subjects%}
+            <li> {{subject}}</li>
+            {%endfor%}
+        </ul>
+    </h3>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <hr>
+    <footer>
+        <h2>copyright@ranveerschool</h2>
+    </footer>
+</body>
+</html>

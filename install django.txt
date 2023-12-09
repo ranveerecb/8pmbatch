@@ -1,0 +1,29 @@
+C:\Users\ranveer\Desktop\8pmbatch\DjangoApps>                  pip install django==4.2.6
+C:\Users\ranveer\Desktop\8pmbatch\DjangoApps>                  python.exe -m pip install --upgrade pip
+C:\Users\ranveer\Desktop\8pmbatch\DjangoApps>                  django-admin --version
+C:\Users\ranveer\Desktop\8pmbatch\DjangoApps>                  django-admin
+
+
+
+C:\Users\ranveer\Desktop\8pmbatch\DjangoApps>                  django-admin startproject webapp1
+C:\Users\ranveer\Desktop\8pmbatch\DjangoApps>                  cd webapp1
+C:\Users\ranveer\Desktop\8pmbatch\DjangoApps\webapp1>          py manage.py runserver
+
+
+C:\Users\ranveer\Desktop\8pmbatch\DjangoApps>                       pip install virtualenv
+
+C:\Users\ranveer\Desktop\8pmbatch\DjangoApps>                       virtualenv python8pm
+
+C:\Users\ranveer\Desktop\8pmbatch\DjangoApps>                       cd python8pm
+
+C:\Users\ranveer\Desktop\8pmbatch\DjangoApps\python8pm>             cd Scripts
+
+C:\Users\ranveer\Desktop\8pmbatch\DjangoApps\python8pm\Scripts>     activate.bat
+
+(python8pm) C:\Users\ranveer\Desktop\8pmbatch\DjangoApps\python8pm\Scripts> 
+
+(python8pm) C:\Users\ranveer\Desktop\8pmbatch\DjangoApps\python8pm\Scripts>    python --version
+Python 3.8.3rc1
+
+(python8pm) C:\Users\ranveer\Desktop\8pmbatch\DjangoApps\python8pm\Scripts>   django-admin --version
+4.2.6

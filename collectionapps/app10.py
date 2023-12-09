@@ -1,0 +1,23 @@
+d1={}
+d2=dict()
+print(type(d1),type(d2))
+d3={1:'Apple','b':'Banana',3:36}
+print(d3)
+#updation
+d3[1]='Orange'
+print(d3)
+#deletion
+del d3[3]
+print(d3)
+d4={'city':'hyd','placeofbirth':'hyd'}
+print(d4)
+d5={'city':'hyd','placeofbirth':'hyd','city':'pune'}
+print(d5)
+print(d5['city'])
+print(d5['placeofbirth'])
+print(d5.keys())
+print(d5.values())
+print(d5.items())
+print(d5.get('city'))
+d5.update({'city':'chennai'})
+print(d5)

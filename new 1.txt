@@ -1,0 +1,650 @@
+Enter password: **********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 19
+Server version: 8.0.28 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| pythondb1          |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.03 sec)
+
+mysql> use pythondb1;
+Database changed
+mysql> show tables;
++---------------------+
+| Tables_in_pythondb1 |
++---------------------+
+| courses             |
++---------------------+
+1 row in set (0.01 sec)
+
+mysql> insert into courses(cid,name,fee,trainername,duration) values ('C01','python',5000,'Chanti'.60);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.60)' at line 1
+mysql>  insert into courses(cid,name,fee,trainername,duration) values ('C02','Java',5000,'Ashok'.60);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.60)' at line 1
+mysql>  insert into courses(cid,name,fee,trainername,duration) values ('C03','DevOps',10000,'Raghu'.60);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.60)' at line 1
+mysql> insert into course(cid,name,fee,trainername,duration) values ('C01','python',5000,'Chanti'.60);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.60)' at line 1
+mysql> insert into courses(cid,name,fee,trainername,duration) values ('C01','python',5000,'Chanti'.60);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.60)' at line 1
+mysql> show tables;
++---------------------+
+| Tables_in_pythondb1 |
++---------------------+
+| courses             |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> show courses;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'courses' at line 1
+mysql> show tables;
++---------------------+
+| Tables_in_pythondb1 |
++---------------------+
+| courses             |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> insert into courses(cid,name,fee,trainername,duration) values ('C01','Python',5000,'Chaimti',60);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from courses;
++-----+--------+------+-------------+----------+
+| cid | name   | fee  | trainername | duration |
++-----+--------+------+-------------+----------+
+| C01 | Python | 5000 | Chaimti     |       60 |
++-----+--------+------+-------------+----------+
+1 row in set (0.00 sec)
+
+mysql> insert into courses(cid,name,fee,trainername,duration) values ('C02','Java',5000,'Ashok'.60);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.60)' at line 1
+mysql> insert into courses(cid,name,fee,trainername,duration) values ('C02','Java',5000,'Ashok'.60);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.60)' at line 1
+mysql>  insert into courses(cid,name,fee,trainername,duration) values ('C03','DevOps',10000,'Raghu'.60);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.60)' at line 1
+mysql>  insert into courses values('C04','React',6000,'Samba'.45);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.45)' at line 1
+mysql> insert into courses(cid,name,fee,trainername,duration) values ('C02','Java',5000,'Ashok'.60);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.60)' at line 1
+mysql> insert into courses(cid,name,fee,trainername,duration) values ('C02','Java',5000,'Ashok'.60);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.60)' at line 1
+mysql> insert into courses(cid,name,fee,trainername,duration) values ('C02','Java',5000,'Ashok',60);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into courses(cid,name,fee,trainername,duration) values ('C03','DevOps',5000,'Raghu',60);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into courses values ('C04','React',6000,'Samba',45);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from courses;
++-----+--------+------+-------------+----------+
+| cid | name   | fee  | trainername | duration |
++-----+--------+------+-------------+----------+
+| C01 | Python | 5000 | Chaimti     |       60 |
+| C02 | Java   | 5000 | Ashok       |       60 |
+| C03 | DevOps | 5000 | Raghu       |       60 |
+| C04 | React  | 6000 | Samba       |       45 |
++-----+--------+------+-------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_pythondb1 |
++---------------------+
+| courses             |
++---------------------+
+1 row in set (0.01 sec)
+
+mysql> show courses;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'courses' at line 1
+mysql> select * from courses;
++-----+--------+------+-------------+----------+
+| cid | name   | fee  | trainername | duration |
++-----+--------+------+-------------+----------+
+| C01 | Python | 5000 | Chaimti     |       60 |
+| C02 | Java   | 5000 | Ashok       |       60 |
+| C03 | DevOps | 5000 | Raghu       |       60 |
+| C04 | React  | 6000 | Samba       |       45 |
++-----+--------+------+-------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> desc courses;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| cid         | varchar(5)  | NO   | PRI | NULL    |       |
+| name        | varchar(20) | NO   |     | NULL    |       |
+| fee         | float       | NO   |     | NULL    |       |
+| trainername | varchar(20) | NO   |     | NULL    |       |
+| duration    | int         | NO   |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+5 rows in set (0.05 sec)
+
+mysql> insert into courses(cid,name,fee,trainername,duration) values ('C01','Python',5000,'Chaimti',60);
+ERROR 1062 (23000): Duplicate entry 'C01' for key 'courses.PRIMARY'
+mysql>  insert into courses(cid,name,fee,trainername,duration) values ('C02','Java',5000,'Ashok',60);
+ERROR 1062 (23000): Duplicate entry 'C02' for key 'courses.PRIMARY'
+mysql>  insert into courses(cid,name,fee,trainername,duration) values ('C03','DevOps',10000,'Raghu',60);
+ERROR 1062 (23000): Duplicate entry 'C03' for key 'courses.PRIMARY'
+mysql>  insert into courses values('C04','React',6000,'Samba',45);
+ERROR 1062 (23000): Duplicate entry 'C04' for key 'courses.PRIMARY'
+mysql> select * from courses;
++-----+--------+------+-------------+----------+
+| cid | name   | fee  | trainername | duration |
++-----+--------+------+-------------+----------+
+| C01 | Python | 5000 | Chaimti     |       60 |
+| C02 | Java   | 5000 | Ashok       |       60 |
+| C03 | DevOps | 5000 | Raghu       |       60 |
+| C04 | React  | 6000 | Samba       |       45 |
++-----+--------+------+-------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> insert into courses(cid,name,fee,trainername,duration) values ('C05','Math',10000,'Rohan',60);
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  select * from courses;
++-----+--------+-------+-------------+----------+
+| cid | name   | fee   | trainername | duration |
++-----+--------+-------+-------------+----------+
+| C01 | Python |  5000 | Chaimti     |       60 |
+| C02 | Java   |  5000 | Ashok       |       60 |
+| C03 | DevOps |  5000 | Raghu       |       60 |
+| C04 | React  |  6000 | Samba       |       45 |
+| C05 | Math   | 10000 | Rohan       |       60 |
++-----+--------+-------+-------------+----------+
+5 rows in set (0.00 sec)
+
+mysql> commit;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql> (
+    -> id           int  auto_increment,
+    -> rollnumber   int,
+    -> name         varchar(20)  not null,
+    -> passport     varchar(10)  unique,
+    -> mailid       varchar(20),
+    -> age          int check(age>1 and age<100),
+    -> country      varchar(20) default 'india',
+    -> courseid     varchar(10),
+    -> primary key(id,rollnumber,mailid),
+    -> foreign key(courseid) references courses(cid)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'id           int  auto_increment,
+rollnumber   int,
+name         varchar(20)  no' at line 2
+mysql> create table students
+    -> (
+    ->     id           int  auto_increment,
+    ->     rollnumber   int,
+    ->     name         varchar(20)  not null,
+    ->     passport     varchar(10)  unique,
+    ->     mailid       varchar(20),
+    ->     age          int check(age>1 and age<100),
+    ->     country      varchar(20) default 'india',
+    ->     courseid     varchar(10),
+    ->     primary key(id,rollnumber,mailid),
+    ->     foreign key(courseid) references courses(cid)
+    -> );
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> desc students;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | int         | NO   | PRI | NULL    | auto_increment |
+| rollnumber | int         | NO   | PRI | NULL    |                |
+| name       | varchar(20) | NO   |     | NULL    |                |
+| passport   | varchar(10) | YES  | UNI | NULL    |                |
+| mailid     | varchar(20) | NO   | PRI | NULL    |                |
+| age        | int         | YES  |     | NULL    |                |
+| country    | varchar(20) | YES  |     | india   |                |
+| courseid   | varchar(10) | YES  | MUL | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
+
+mysql> insert into students(rollnumber,name,passport,mailid,age,courseid) values(501,'Rahul','pass1','rahul@gmail.com',45,'C01');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into students(rollnumber,name,passport,mailid,age,courseid) values(502,'Vinod','pass2','vinod@gmail.com',55,'C02');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from students;
++----+------------+-------+----------+-----------------+------+---------+----------+
+| id | rollnumber | name  | passport | mailid          | age  | country | courseid |
++----+------------+-------+----------+-----------------+------+---------+----------+
+|  1 |        501 | Rahul | pass1    | rahul@gmail.com |   45 | india   | C01      |
+|  2 |        502 | Vinod | pass2    | vinod@gmail.com |   55 | india   | C02      |
++----+------------+-------+----------+-----------------+------+---------+----------+
+2 rows in set (0.00 sec)
+
+mysql> select * from courses;
++-----+--------+-------+-------------+----------+
+| cid | name   | fee   | trainername | duration |
++-----+--------+-------+-------------+----------+
+| C01 | Python |  5000 | Chaimti     |       60 |
+| C02 | Java   |  5000 | Ashok       |       60 |
+| C03 | DevOps |  5000 | Raghu       |       60 |
+| C04 | React  |  6000 | Samba       |       45 |
+| C05 | Math   | 10000 | Rohan       |       60 |
++-----+--------+-------+-------------+----------+
+5 rows in set (0.01 sec)
+
+mysql> Update course set name='Django' where cid='C01';
+ERROR 1146 (42S02): Table 'pythondb1.course' doesn't exist
+mysql> Update courses set name='Django' where cid='C01';
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> Update courses set name='Django' where cid='C01';
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+mysql> select * from courses;
++-----+--------+-------+-------------+----------+
+| cid | name   | fee   | trainername | duration |
++-----+--------+-------+-------------+----------+
+| C01 | Django |  5000 | Chaimti     |       60 |
+| C02 | Java   |  5000 | Ashok       |       60 |
+| C03 | DevOps |  5000 | Raghu       |       60 |
+| C04 | React  |  6000 | Samba       |       45 |
+| C05 | Math   | 10000 | Rohan       |       60 |
++-----+--------+-------+-------------+----------+
+5 rows in set (0.00 sec)
+
+mysql> Update courses set trainername='Mitra' where cid='C02';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from courses;
++-----+--------+-------+-------------+----------+
+| cid | name   | fee   | trainername | duration |
++-----+--------+-------+-------------+----------+
+| C01 | Django |  5000 | Chaimti     |       60 |
+| C02 | Java   |  5000 | Mitra       |       60 |
+| C03 | DevOps |  5000 | Raghu       |       60 |
+| C04 | React  |  6000 | Samba       |       45 |
+| C05 | Math   | 10000 | Rohan       |       60 |
++-----+--------+-------+-------------+----------+
+5 rows in set (0.00 sec)
+
+mysql> Update courses set fee=20000,trainername='venu' where cid='C03';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from courses;
++-----+--------+-------+-------------+----------+
+| cid | name   | fee   | trainername | duration |
++-----+--------+-------+-------------+----------+
+| C01 | Django |  5000 | Chaimti     |       60 |
+| C02 | Java   |  5000 | Mitra       |       60 |
+| C03 | DevOps | 20000 | venu        |       60 |
+| C04 | React  |  6000 | Samba       |       45 |
+| C05 | Math   | 10000 | Rohan       |       60 |
++-----+--------+-------+-------------+----------+
+5 rows in set (0.00 sec)
+
+mysql> create table Employees(
+    -> Id int primary key,
+    -> pin int not null,
+    -> Name varchar(20) not null,
+    -> Age int check(age>20 and age<60),
+    -> Address varchar(20) not null,
+    -> Salary Float(10) not null,
+    -> dept varchar(10) not null
+    -> );
+Query OK, 0 rows affected (0.21 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_pythondb1 |
++---------------------+
+| courses             |
+| employees           |
+| students            |
++---------------------+
+3 rows in set (0.03 sec)
+
+mysql> show employess;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'employess' at line 1
+mysql> insert into Employees values(1,111,'Ramesh',32,'Mumbai',20000.00,'dev');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from employees;
++----+-----+--------+------+---------+--------+------+
+| Id | pin | Name   | Age  | Address | Salary | dept |
++----+-----+--------+------+---------+--------+------+
+|  1 | 111 | Ramesh |   32 | Mumbai  |  20000 | dev  |
++----+-----+--------+------+---------+--------+------+
+1 row in set (0.00 sec)
+
+mysql> insert into Employees values(1,222,'Khilan',25,'Delhi',15000.00,'dev');
+ERROR 1062 (23000): Duplicate entry '1' for key 'employees.PRIMARY'
+mysql> insert into Employees values(1,333,'Kaushik',23,'Kota',20000.00,'qa');
+ERROR 1062 (23000): Duplicate entry '1' for key 'employees.PRIMARY'
+mysql> insert into Employees values(1,444,'Chaitali',25,'Mumbai',65000.00,'qa');
+ERROR 1062 (23000): Duplicate entry '1' for key 'employees.PRIMARY'
+mysql> insert into Employees values(1,555,'Hardik',27,'Mumbai',85000.00,'dev');
+ERROR 1062 (23000): Duplicate entry '1' for key 'employees.PRIMARY'
+mysql> insert into Employees values(2,222,'Khilan',25,'Delhi',15000.00,'dev');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Employees values(3,333,'Kaushik',23,'Kota',20000.00,'qa');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Employees values(4,444,'Chaitali',25,'Mumbai',65000.00,'qa');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Employees values(5,555,'Hardik',27,'Mumbai',85000.00,'dev');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from employees;
++----+-----+----------+------+---------+--------+------+
+| Id | pin | Name     | Age  | Address | Salary | dept |
++----+-----+----------+------+---------+--------+------+
+|  1 | 111 | Ramesh   |   32 | Mumbai  |  20000 | dev  |
+|  2 | 222 | Khilan   |   25 | Delhi   |  15000 | dev  |
+|  3 | 333 | Kaushik  |   23 | Kota    |  20000 | qa   |
+|  4 | 444 | Chaitali |   25 | Mumbai  |  65000 | qa   |
+|  5 | 555 | Hardik   |   27 | Mumbai  |  85000 | dev  |
++----+-----+----------+------+---------+--------+------+
+5 rows in set (0.00 sec)
+
+mysql> select id,pinfrom Employees;
+ERROR 1054 (42S22): Unknown column 'id' in 'field list'
+mysql>  select id,pin from Employees;
++----+-----+
+| id | pin |
++----+-----+
+|  1 | 111 |
+|  2 | 222 |
+|  3 | 333 |
+|  4 | 444 |
+|  5 | 555 |
++----+-----+
+5 rows in set (0.00 sec)
+
+mysql> select pin from Employees;
++-----+
+| pin |
++-----+
+| 111 |
+| 222 |
+| 333 |
+| 444 |
+| 555 |
++-----+
+5 rows in set (0.00 sec)
+
+mysql> select id,dept from Employees;
++----+------+
+| id | dept |
++----+------+
+|  1 | dev  |
+|  2 | dev  |
+|  3 | qa   |
+|  4 | qa   |
+|  5 | dev  |
++----+------+
+5 rows in set (0.00 sec)
+
+mysql> select id,dept,salary from Employees;
++----+------+--------+
+| id | dept | salary |
++----+------+--------+
+|  1 | dev  |  20000 |
+|  2 | dev  |  15000 |
+|  3 | qa   |  20000 |
+|  4 | qa   |  65000 |
+|  5 | dev  |  85000 |
++----+------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select id,dept,salary from Employees where>30000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '>30000' at line 1
+mysql> select id,dept,salary from Employees where salary>30000;
++----+------+--------+
+| id | dept | salary |
++----+------+--------+
+|  4 | qa   |  65000 |
+|  5 | dev  |  85000 |
++----+------+--------+
+2 rows in set (0.00 sec)
+
+mysql>  select id,dept,salary from Employees where salary!>30000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '!>30000' at line 1
+mysql> select id,dept,salary from Employees where salary!=30000;
++----+------+--------+
+| id | dept | salary |
++----+------+--------+
+|  1 | dev  |  20000 |
+|  2 | dev  |  15000 |
+|  3 | qa   |  20000 |
+|  4 | qa   |  65000 |
+|  5 | dev  |  85000 |
++----+------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select id,dept,salary from Employees where salary!=20000;
++----+------+--------+
+| id | dept | salary |
++----+------+--------+
+|  2 | dev  |  15000 |
+|  4 | qa   |  65000 |
+|  5 | dev  |  85000 |
++----+------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select id,dept,salary from Employees where salary<>30000;
++----+------+--------+
+| id | dept | salary |
++----+------+--------+
+|  1 | dev  |  20000 |
+|  2 | dev  |  15000 |
+|  3 | qa   |  20000 |
+|  4 | qa   |  65000 |
+|  5 | dev  |  85000 |
++----+------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select id,dept,salary from Employees where salary<>20000;
++----+------+--------+
+| id | dept | salary |
++----+------+--------+
+|  2 | dev  |  15000 |
+|  4 | qa   |  65000 |
+|  5 | dev  |  85000 |
++----+------+--------+
+3 rows in set (0.00 sec)
+
+mysql> ysql> select id,dept,salary from Employees where salary<>20000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ysql> select id,dept,salary from Employees where salary<>20000' at line 1
+mysql> +----+------+--------+
+    -> | id | dept | salary |
+    -> +----+------+--------+
+    -> |  2 | dev  |  15000 |
+    -> |  4 | qa   |  65000 |
+    -> |  5 | dev  |  85000 |
+    -> +----+------+--------+
+    -> 3 rows in set (0.00 sec)
+    ->
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+----+------+--------+
+| id | dept | salary |
++----+------+--------+
+|  2 | dev ' at line 1
+mysql> select id,dept,salary from Employees where salary>30000 and dept='dev';
++----+------+--------+
+| id | dept | salary |
++----+------+--------+
+|  5 | dev  |  85000 |
++----+------+--------+
+1 row in set (0.00 sec)
+
+mysql> select sum(salary) from Employees;
++-------------+
+| sum(salary) |
++-------------+
+|      205000 |
++-------------+
+1 row in set (0.01 sec)
+
+mysql>  select min(salary) from Employees;
++-------------+
+| min(salary) |
++-------------+
+|       15000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql>  select mix(salary) from Employees;
+ERROR 1305 (42000): FUNCTION pythondb1.mix does not exist
+mysql> select max(salary) from Employees;
++-------------+
+| max(salary) |
++-------------+
+|       85000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(salary) from Employees;
++-------------+
+| avg(salary) |
++-------------+
+|       41000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select count(salary) from Employees;
++---------------+
+| count(salary) |
++---------------+
+|             5 |
++---------------+
+1 row in set (0.05 sec)
+
+mysql> select count(*) from Employees;
++----------+
+| count(*) |
++----------+
+|        5 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select * from employees;
++----+-----+----------+------+---------+--------+------+
+| Id | pin | Name     | Age  | Address | Salary | dept |
++----+-----+----------+------+---------+--------+------+
+|  1 | 111 | Ramesh   |   32 | Mumbai  |  20000 | dev  |
+|  2 | 222 | Khilan   |   25 | Delhi   |  15000 | dev  |
+|  3 | 333 | Kaushik  |   23 | Kota    |  20000 | qa   |
+|  4 | 444 | Chaitali |   25 | Mumbai  |  65000 | qa   |
+|  5 | 555 | Hardik   |   27 | Mumbai  |  85000 | dev  |
++----+-----+----------+------+---------+--------+------+
+5 rows in set (0.00 sec)
+
+mysql> select pin from employees where id=1;
++-----+
+| pin |
++-----+
+| 111 |
++-----+
+1 row in set (0.00 sec)
+
+mysql> select * from employees where address='mumbai';
++----+-----+----------+------+---------+--------+------+
+| Id | pin | Name     | Age  | Address | Salary | dept |
++----+-----+----------+------+---------+--------+------+
+|  1 | 111 | Ramesh   |   32 | Mumbai  |  20000 | dev  |
+|  4 | 444 | Chaitali |   25 | Mumbai  |  65000 | qa   |
+|  5 | 555 | Hardik   |   27 | Mumbai  |  85000 | dev  |
++----+-----+----------+------+---------+--------+------+
+3 rows in set (0.00 sec)
+
+mysql> select * from employees where dept='dev';
++----+-----+--------+------+---------+--------+------+
+| Id | pin | Name   | Age  | Address | Salary | dept |
++----+-----+--------+------+---------+--------+------+
+|  1 | 111 | Ramesh |   32 | Mumbai  |  20000 | dev  |
+|  2 | 222 | Khilan |   25 | Delhi   |  15000 | dev  |
+|  5 | 555 | Hardik |   27 | Mumbai  |  85000 | dev  |
++----+-----+--------+------+---------+--------+------+
+3 rows in set (0.00 sec)
+
+mysql> select * from employees;
++----+-----+----------+------+---------+--------+------+
+| Id | pin | Name     | Age  | Address | Salary | dept |
++----+-----+----------+------+---------+--------+------+
+|  1 | 111 | Ramesh   |   32 | Mumbai  |  20000 | dev  |
+|  2 | 222 | Khilan   |   25 | Delhi   |  15000 | dev  |
+|  3 | 333 | Kaushik  |   23 | Kota    |  20000 | qa   |
+|  4 | 444 | Chaitali |   25 | Mumbai  |  65000 | qa   |
+|  5 | 555 | Hardik   |   27 | Mumbai  |  85000 | dev  |
++----+-----+----------+------+---------+--------+------+
+5 rows in set (0.00 sec)
+
+mysql> select * from employees order by name;
++----+-----+----------+------+---------+--------+------+
+| Id | pin | Name     | Age  | Address | Salary | dept |
++----+-----+----------+------+---------+--------+------+
+|  4 | 444 | Chaitali |   25 | Mumbai  |  65000 | qa   |
+|  5 | 555 | Hardik   |   27 | Mumbai  |  85000 | dev  |
+|  3 | 333 | Kaushik  |   23 | Kota    |  20000 | qa   |
+|  2 | 222 | Khilan   |   25 | Delhi   |  15000 | dev  |
+|  1 | 111 | Ramesh   |   32 | Mumbai  |  20000 | dev  |
++----+-----+----------+------+---------+--------+------+
+5 rows in set (0.00 sec)
+
+mysql> select * from employees order by salary;
++----+-----+----------+------+---------+--------+------+
+| Id | pin | Name     | Age  | Address | Salary | dept |
++----+-----+----------+------+---------+--------+------+
+|  2 | 222 | Khilan   |   25 | Delhi   |  15000 | dev  |
+|  1 | 111 | Ramesh   |   32 | Mumbai  |  20000 | dev  |
+|  3 | 333 | Kaushik  |   23 | Kota    |  20000 | qa   |
+|  4 | 444 | Chaitali |   25 | Mumbai  |  65000 | qa   |
+|  5 | 555 | Hardik   |   27 | Mumbai  |  85000 | dev  |
++----+-----+----------+------+---------+--------+------+
+5 rows in set (0.00 sec)
+
+mysql> select * from employees order by salary desc;
++----+-----+----------+------+---------+--------+------+
+| Id | pin | Name     | Age  | Address | Salary | dept |
++----+-----+----------+------+---------+--------+------+
+|  5 | 555 | Hardik   |   27 | Mumbai  |  85000 | dev  |
+|  4 | 444 | Chaitali |   25 | Mumbai  |  65000 | qa   |
+|  1 | 111 | Ramesh   |   32 | Mumbai  |  20000 | dev  |
+|  3 | 333 | Kaushik  |   23 | Kota    |  20000 | qa   |
+|  2 | 222 | Khilan   |   25 | Delhi   |  15000 | dev  |
++----+-----+----------+------+---------+--------+------+
+5 rows in set (0.00 sec)
+
+mysql> select sum(salary),dept from employees group by dept;
++-------------+------+
+| sum(salary) | dept |
++-------------+------+
+|      120000 | dev  |
+|       85000 | qa   |
++-------------+------+
+2 rows in set (0.01 sec)
+
+mysql>

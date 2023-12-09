@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>about</title>
+</head>
+<body>
+{% extends "base.html" %}
+{% block content %}
+<p>
+    <a href="{% url 'homel' %}">Home</a> | <a href="#">About</a> | <a href="{% url 'contactl' %}">Contact</a>
+</p>
+<hr>
+<h1>
+    About page data goes here
+</h1>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+{% endblock %}
+</body>
+</html>

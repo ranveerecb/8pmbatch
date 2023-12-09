@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+</head>
+<body bgcolor="yellow" text="red">
+    <header>
+        <p align="center">
+            <a href="{% url 'homel'%}">home</a>
+            <a href="#">about</a>
+            <a href="{% url 'contactl'%}">contact</a>
+        </p>
+    </header>
+    <hr>
+    <h1>
+        ranveer school is wonderfull school
+    </h1>
+    <h2>
+        Owner belongs to{{place}}
+    </h2>
+    <h3>
+        Experience is: {{exp}}  <br>
+        {% if exp > 5 %}
+        <p>He is Master in Training</p>
+        {% else %}
+        <p>He is Fresher in Training</p>
+        {% endif %}
+    </h3>
+    <img src="{% static 'wp7676483.png'%}" alt="wp7676483" height="200px" width="200px">
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <hr>
+    <footer>
+        <h2>copyright@ranveerschool</h2>
+    </footer>
+</body>
+</html>

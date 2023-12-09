@@ -1,0 +1,20 @@
+'''
+9.'is' related function(6)
+    isdigit()
+    isalpha()
+    isalnum
+    islower()
+    isupper()
+    istitle()
+'''
+print('9'.isdigit())
+print('A'.isdigit())
+print('9'.isalpha())
+print('A'.isalpha())
+print('9'.isalnum())
+print('A'.isalnum())
+print('$'.isalnum())
+print('india'.islower())
+print('INDIA'.isupper())
+print('india is my country'.istitle())
+print('India Is My Country'.istitle())
